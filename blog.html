@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibindo Posts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .post {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            max-width: 400px;
+        }
+
+        .post h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .post p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meus Posts</h1>
+    <div id="postList">
+    </div>
+
+    <script>
+        // Dados de exemplo para os posts
+        var posts = [
+            { title: "Título do Post 1", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Sit amet consectetur adipiscing elit. Integer eget aliquet nibh praesent tristique magna. Sit amet purus gravida quis. Quam id leo in vitae turpis. Turpis tincidunt id aliquet risus feugiat in ante metus. Odio tempor orci dapibus ultrices in iaculis nunc sed. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Non blandit massa enim nec dui nunc mattis enim ut. Duis convallis convallis tellus id. Eget magna fermentum iaculis eu non diam phasellus. Euismod in pellentesque massa placerat duis ultricies. Eu non diam phasellus vestibulum lorem sed risus ultricies tristique. Neque sodales ut etiam sit amet nisl purus. Volutpat consequat mauris nunc congue nisi vitae suscipit." },
+            { title: "Título do Post 2", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Sit amet consectetur adipiscing elit. Integer eget aliquet nibh praesent tristique magna. Sit amet purus gravida quis. Quam id leo in vitae turpis. Turpis tincidunt id aliquet risus feugiat in ante metus. Odio tempor orci dapibus ultrices in iaculis nunc sed. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Non blandit massa enim nec dui nunc mattis enim ut. Duis convallis convallis tellus id. Eget magna fermentum iaculis eu non diam phasellus. Euismod in pellentesque massa placerat duis ultricies. Eu non diam phasellus vestibulum lorem sed risus ultricies tristique. Neque sodales ut etiam sit amet nisl purus. Volutpat consequat mauris nunc congue nisi vitae suscipit." },
+            { title: "Título do Post 3", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida dictum. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Sit amet consectetur adipiscing elit. Integer eget aliquet nibh praesent tristique magna. Sit amet purus gravida quis. Quam id leo in vitae turpis. Turpis tincidunt id aliquet risus feugiat in ante metus. Odio tempor orci dapibus ultrices in iaculis nunc sed. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Non blandit massa enim nec dui nunc mattis enim ut. Duis convallis convallis tellus id. Eget magna fermentum iaculis eu non diam phasellus. Euismod in pellentesque massa placerat duis ultricies. Eu non diam phasellus vestibulum lorem sed risus ultricies tristique. Neque sodales ut etiam sit amet nisl purus. Volutpat consequat mauris nunc congue nisi vitae suscipit." }
+        ];
+
+        // Função para exibir os posts na página
+        function renderPosts() {
+            var postListElement = document.getElementById('postList');
+            posts.forEach(function(post) {
+                var postElement = document.createElement('div');
+                postElement.classList.add('post');
+
+                var titleElement = document.createElement('h2');
+                titleElement.textContent = post.title;
+
+                var bodyElement = document.createElement('p');
+                bodyElement.textContent = post.body;
+
+                postElement.appendChild(titleElement);
+                postElement.appendChild(bodyElement);
+
+                postListElement.appendChild(postElement);
+            });
+        }
+
+        // Chamar a função para exibir os posts quando a página é carregada
+        window.onload = renderPosts;
+    </script>
+</body>
+</html>
